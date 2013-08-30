@@ -1,0 +1,109 @@
+@import "normalize"
+@import "yue"
+@import "pygments_github"
+
+$grey: #808080
+
+@mixin large-devices
+  @media only screen and (min-width: 1200px)
+    @content
+
+@mixin small-devices
+  @media only screen and (max-width: 1200px)
+    @content
+
+@mixin tables
+  @media only screen and (min-width: 768px) and (max-width: 1200px)
+    @content
+
+@mixin phones
+  @media only screen and (max-width: 768px)
+    @content
+
+#wrapper
+  width: 720px
+  @include phones
+    width: auto
+  margin-left: auto
+  margin-right: auto
+  padding-top: 20px
+  padding-left: 10px
+  padding-right: 10px
+
+#header
+  @include large-devices
+    opacity: .7
+    a:hover
+      opacity: 1
+      color: #222233
+
+  padding-bottom: 20px
+  #site_name
+    text-decoration: none
+    font-size: 1.3em
+    @include small-devices
+      display: block
+      text-align: center
+      font-size: 2em
+      color: #111111
+  nav
+    text-align: center
+    display: block
+    float: none
+    border-top: 1px solid rgba(0, 0, 0, .1)
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+    a
+      padding-right: 10px
+      &:last-child
+        padding-right: 0
+    @include large-devices
+      display: inline
+      float: right
+      border-top: none
+      border-bottom: none
+
+#content
+  .meta
+    color: $grey
+
+  ol#posts
+    list-style-type: none
+    li
+      padding-top: 5px
+      padding-bottom: 5px
+      .meta
+        font-size: .8em
+      a
+        padding-left: 5px
+
+  #pagination
+    font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif
+    text-align: center
+    #prev
+      float: left
+    #next
+      float: right
+
+  .post
+    h1#title
+      text-align: center
+    & > .meta
+      text-align: center
+    .tags
+      color: $grey
+      font-style: italic
+      font-size: .9em
+      a
+        color: $grey
+
+#footer
+  color: $grey
+  font-size: .8em
+  text-align: center
+  margin-top: 20px
+  padding-top: 10px
+  padding-bottom: 10px
+  border-top: 1px solid rgba(0, 0, 0, .1)
+
+  a
+    color: $grey

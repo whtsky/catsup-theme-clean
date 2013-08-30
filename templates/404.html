@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+404 | {{ site.name }}
+{% endblock %}
+
+{% block content %}
+<h1>Oops, Page Not Found.</h1>
+
+What about ..
+<ol id="posts">
+{% for post in generator.posts %}
+<li>
+    <span class="meta">{{ post.date }}</span> <a href="{{ url_for(post) }}">{{ post.title }}</a>
+</li>
+{% endfor %}
+</ol>
+{% endblock %}

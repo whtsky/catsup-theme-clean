@@ -1,0 +1,36 @@
+{% from "utils.html" import analytics %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% block head %}{% endblock %}
+    <meta name="viewport" content="width=device-width" />
+    <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ static_url("clean.css") }}" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" href="{{ url_for('feed') }}" title="{{ site.name }}" />
+    <link rel="canonical" href="{{ permalink }}"/>
+    {{ analytics() }}
+</head>
+<body>
+    <div id="wrapper" class="yue">
+        <header id="header">
+            <a href="{{ url_for('index') }}" id="site_name">{{ site.name }}</a>
+            <nav>
+                <a href="{{ url_for("archives") }}">Archives</a>
+                {% for page in pages %}
+                <a href="{{ url_for(page) }}">{{ page.title }}</a>
+                {% endfor %}
+            </nav>
+        </header>
+        <div id="content">
+        {% block content %}
+        {% endblock %}
+        </div>
+        <footer id="footer">
+            Powered by <a href="http://github.com/whtsky/catsup">Catsup</a>
+            &
+            Theme <a href="https://github.com/whtsky/catsup-theme-clean">Clean</a> by <a href="http://whouz.com">whtsky</a>
+        </footer>
+    </div>
+</body>
+</html>
