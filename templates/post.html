@@ -12,8 +12,8 @@
 {% block content %}
 <div class="post">
     <h1 id="title">{{ post.title }}</h1>
-    <div class="meta">
-    @ {{ post.date }}
+    <div class="date">
+    {{ post.datetime.strftime("%b %d, %Y") }}
     </div>
     <article>
     {{ post.content }}

@@ -63,7 +63,8 @@ $grey: #808080
       border-bottom: none
 
 #content
-  .meta
+  .date
+    font-style: italic
     color: $grey
 
   ol#posts
@@ -71,10 +72,10 @@ $grey: #808080
     li
       padding-top: 5px
       padding-bottom: 5px
-      .meta
-        font-size: .8em
       a
         padding-left: 5px
+      .date
+        font-size: .8em
 
   #pagination
     font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -87,8 +88,11 @@ $grey: #808080
   .post
     h1#title
       text-align: center
-    & > .meta
+    & > .date
       text-align: center
+    article
+      padding-top: 30px
+      border-top: 1px solid rgba(0, 0, 0, .1)
     .tags
       color: $grey
       font-style: italic

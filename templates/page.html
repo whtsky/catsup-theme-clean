@@ -4,7 +4,7 @@
 <ol id="posts">
     {% for post in pagination.items %}
     <li>
-        <span class="meta">{{ post.date }}</span> <a href="{{ url_for(post) }}">{{ post.title }}</a>
+        <span class="date">{{ post.datetime.strftime("%b %d, %Y") }}</span> <a href="{{ url_for(post) }}">{{ post.title }}</a>
     </li>
     {% endfor %}
 </ol>
